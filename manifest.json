@@ -1,0 +1,22 @@
+{
+  "name": "CDCounter",
+  "start_url": "/",
+  "display": "standalone",
+  "registerType": "autoUpdate",
+  "includeAssets": ["icon.svg"],
+  "icons": [
+    {
+      "src": "/logo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "workbox": {
+    "globPatterns": [",**/*.(js|ts|css|html|png|svg)"]
+  }
+}
