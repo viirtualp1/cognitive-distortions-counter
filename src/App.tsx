@@ -38,6 +38,7 @@ function App() {
       <Grid container sx={{ marginTop: '24px' }} spacing={2}>
         <CounterGrid
           title="magnification-minimization"
+          description="Чужие успехи и свои ошибки — «гигантские», свои достижения — «мелочь»."
           count={mMCount}
           addCount={addMMCount}
           clearCount={clearMMCount}
@@ -45,6 +46,7 @@ function App() {
 
         <CounterGrid
           title="should-statements"
+          description="Жёсткие внутренние правила («я обязан быть идеальным»)."
           count={sSCount}
           addCount={addSSCount}
           clearCount={clearSSCount}
@@ -52,6 +54,7 @@ function App() {
 
         <CounterGrid
           title="Predicting the future and 'mind reading'"
+          description="Уверенность, что знаете, как всё кончится или что думают другие."
           count={fPMRCount}
           addCount={addFPMRCount}
           clearCount={clearFPMRCount}
@@ -59,6 +62,7 @@ function App() {
 
         <CounterGrid
           title="Emotional reasoning"
+          description="«Я так чувствую, значит, это правда»."
           count={eRCount}
           addCount={addERCount}
           clearCount={clearERCount}
@@ -66,6 +70,7 @@ function App() {
 
         <CounterGrid
           title="Labeling"
+          description="Ошибка ↔ «я неудачник»."
           count={labelingCount}
           addCount={addLabelingCount}
           clearCount={clearLabelingCount}
