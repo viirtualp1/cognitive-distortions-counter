@@ -9,6 +9,14 @@ export function useCounter(key: string) {
     setStoreValue((prev) => prev + 1)
   }
 
+  const clearCount = () => {
+    const isConfirmed = confirm('Are you sure you want to clear the count?')
+
+    if (!isConfirmed) return
+
+    setStoreValue(0)
+  }
+
   useEffect(() => {
     setCount(storeValue)
   }, [storeValue])
@@ -16,5 +24,6 @@ export function useCounter(key: string) {
   return {
     count,
     addCount,
+    clearCount,
   }
 }
