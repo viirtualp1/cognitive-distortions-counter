@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { Button, Grid, Typography } from '@mui/material'
-import ClearIcon from '@mui/icons-material/clear'
+import ClearIcon from '@mui/icons-material/Clear'
 
 interface Props {
   title: string
