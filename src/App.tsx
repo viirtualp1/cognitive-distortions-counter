@@ -4,34 +4,40 @@ import CounterGrid from './components/CounterGrid/CounterGrid.tsx'
 
 function App() {
   const {
-    addCount: addMMCount,
     count: mMCount,
+    addCount: addMMCount,
     clearCount: clearMMCount,
   } = useCounter('magnification-minimization')
 
   const {
-    addCount: addSSCount,
     count: sSCount,
+    addCount: addSSCount,
     clearCount: clearSSCount,
   } = useCounter('should-statements')
 
   const {
-    addCount: addFPMRCount,
     count: fPMRCount,
+    addCount: addFPMRCount,
     clearCount: clearFPMRCount,
   } = useCounter('future-predicting-mind-reading')
 
   const {
-    addCount: addERCount,
     count: eRCount,
+    addCount: addERCount,
     clearCount: clearERCount,
   } = useCounter('emotional-reasoning')
 
   const {
-    addCount: addLabelingCount,
     count: labelingCount,
+    addCount: addLabelingCount,
     clearCount: clearLabelingCount,
   } = useCounter('labeling')
+
+  const {
+    count: behavioralInertiaCount,
+    addCount: addBehavioralInertia,
+    clearCount: clearBehavioralInertia,
+  } = useCounter('behavioral-inertia')
 
   return (
     <Container>
@@ -74,6 +80,14 @@ function App() {
           count={labelingCount}
           addCount={addLabelingCount}
           clearCount={clearLabelingCount}
+        />
+
+        <CounterGrid
+          title="Behavioral inertia"
+          description="Нежелание менять привычное поведение, даже если оно неэффективно."
+          count={behavioralInertiaCount}
+          addCount={addBehavioralInertia}
+          clearCount={clearBehavioralInertia}
         />
       </Grid>
     </Container>
