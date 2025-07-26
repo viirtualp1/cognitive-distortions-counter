@@ -1,93 +1,66 @@
 import { Container, Grid } from '@mui/material'
-import { useCounter } from './composables/useCounter/useCounter.ts'
 import CounterGrid from './components/CounterGrid/CounterGrid.tsx'
+import { DistortionsType } from './utils/distortions.ts'
+import { useCounters } from './composables/useCounters/useCounters.ts'
 
 function App() {
-  const {
-    count: mMCount,
-    addCount: addMMCount,
-    clearCount: clearMMCount,
-  } = useCounter('magnification-minimization')
-
-  const {
-    count: sSCount,
-    addCount: addSSCount,
-    clearCount: clearSSCount,
-  } = useCounter('should-statements')
-
-  const {
-    count: fPMRCount,
-    addCount: addFPMRCount,
-    clearCount: clearFPMRCount,
-  } = useCounter('future-predicting-mind-reading')
-
-  const {
-    count: eRCount,
-    addCount: addERCount,
-    clearCount: clearERCount,
-  } = useCounter('emotional-reasoning')
-
-  const {
-    count: labelingCount,
-    addCount: addLabelingCount,
-    clearCount: clearLabelingCount,
-  } = useCounter('labeling')
-
-  const {
-    count: behavioralInertiaCount,
-    addCount: addBehavioralInertia,
-    clearCount: clearBehavioralInertia,
-  } = useCounter('behavioral-inertia')
+  const counters = useCounters()
 
   return (
     <Container>
       <Grid container sx={{ marginTop: '24px' }} spacing={2}>
         <CounterGrid
-          title="magnification-minimization"
-          description="Чужие успехи и свои ошибки — «гигантские», свои достижения — «мелочь»."
-          count={mMCount}
-          addCount={addMMCount}
-          clearCount={clearMMCount}
+          title="Magnification-minimization"
+          description="Other people's successes and their mistakes are ‘gigantic’, their own achievements are ‘petty’."
+          count={counters[DistortionsType.MagnificationMinimization].count}
+          decrementCount={
+            counters[DistortionsType.MagnificationMinimization].decrementCount
+          }
+          addCount={
+            counters[DistortionsType.MagnificationMinimization].addCount
+          }
         />
 
         <CounterGrid
-          title="should-statements"
-          description="Жёсткие внутренние правила («я обязан быть идеальным»)."
-          count={sSCount}
-          addCount={addSSCount}
-          clearCount={clearSSCount}
+          title="Should-statements"
+          description="Rigid internal rules (‘I have to be perfect’)."
+          count={counters[DistortionsType.ShouldStatements].count}
+          addCount={counters[DistortionsType.ShouldStatements].addCount}
+          decrementCount={
+            counters[DistortionsType.ShouldStatements].decrementCount
+          }
         />
 
         <CounterGrid
           title="Predicting the future and 'mind reading'"
-          description="Уверенность, что знаете, как всё кончится или что думают другие."
-          count={fPMRCount}
-          addCount={addFPMRCount}
-          clearCount={clearFPMRCount}
+          description="Confidence in knowing how things will turn out or what others think."
+          count={counters[DistortionsType.FuturePredictingMindReading].count}
+          addCount={
+            counters[DistortionsType.FuturePredictingMindReading].addCount
+          }
+          decrementCount={
+            counters[DistortionsType.FuturePredictingMindReading].decrementCount
+          }
         />
 
         <CounterGrid
           title="Emotional reasoning"
-          description="«Я так чувствую, значит, это правда»."
-          count={eRCount}
-          addCount={addERCount}
-          clearCount={clearERCount}
-        />
-
-        <CounterGrid
-          title="Labeling"
-          description="Ошибка ↔ «я неудачник»."
-          count={labelingCount}
-          addCount={addLabelingCount}
-          clearCount={clearLabelingCount}
+          description="‘I feel this way, so it must be true.’"
+          count={counters[DistortionsType.EmotionalReasoning].count}
+          addCount={counters[DistortionsType.EmotionalReasoning].addCount}
+          decrementCount={
+            counters[DistortionsType.EmotionalReasoning].decrementCount
+          }
         />
 
         <CounterGrid
           title="Behavioral inertia"
-          description="Нежелание менять привычное поведение, даже если оно неэффективно."
-          count={behavioralInertiaCount}
-          addCount={addBehavioralInertia}
-          clearCount={clearBehavioralInertia}
+          description="Unwillingness to change habitual behaviour, even if it is ineffective."
+          count={counters[DistortionsType.BehavioralInertia].count}
+          addCount={counters[DistortionsType.BehavioralInertia].addCount}
+          decrementCount={
+            counters[DistortionsType.BehavioralInertia].decrementCount
+          }
         />
       </Grid>
     </Container>

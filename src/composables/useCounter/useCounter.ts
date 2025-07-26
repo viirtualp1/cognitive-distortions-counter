@@ -17,6 +17,10 @@ export function useCounter(key: string) {
     setStoreValue(0)
   }
 
+  const decrementCount = () => {
+    setStoreValue((prev) => (prev > 0 ? prev - 1 : 0))
+  }
+
   useEffect(() => {
     setCount(storeValue)
   }, [storeValue])
@@ -25,5 +29,6 @@ export function useCounter(key: string) {
     count,
     addCount,
     clearCount,
+    decrementCount,
   }
 }
